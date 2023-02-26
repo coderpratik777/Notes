@@ -1,0 +1,29 @@
+to do 
+car implementation using hibernate Jpa
+
+we call dao classes repository
+from spring 
+
+mvc architecture 
+to start new project for web application-
+1) create maven project -
+create new project
+add groupid
+add com.pratiti.training.name
+
+add war
+2) there is error in pom.xml
+to solve the error
+rightclick on the project
+go to java ee tools and the click generate deployment scripto tub
+
+one error will be solve 
+let it be don't worry
+
+
+3) we have to use the spring so add spring context in your project in pom.xml
+also add webmvc dependency
+4) edited the web.xml file and added the servlet code 
+5) add the my-config-spring.xml in the directory
+
+

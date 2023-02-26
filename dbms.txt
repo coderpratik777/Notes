@@ -1,0 +1,176 @@
+--Single line functions                                                                   Assignment -difference betwn dbms and rdbms. 
+                                                                                                      read anomalies
+--Multi line functions also called as Aggregate functions
+
+SELECT Count(*) from hr.employees; result==107
+SELECT Count(employee_id) from hr.employees; result==107
+--here employee_id is a primary key so there will be no Null values
+
+SELECT Count (salary) from hr.employees; result==105
+--if there are null values in the column salary then it ignore null rows
+
+--fetch department wise highest salary
+select department_id,max(salary) from hr.emplyees GROUP BY department_id;
+
+Group by clause
+select department_id,sjobid,avg(salary) from hr.employees GROUP BY departmnt _id,job_id;
+
+Joins
+-----------------
+-join is a construct fetching data from one or more table
+-minimum no. of joins =no.tables-1
+-to join multiple tables ,there has to be a matching column
+(matching column does not mean that the name of the column has to match what has to match is the datatype)
+-bascially there are 2 types of joins ,innner and outer
+
+inner
+-equijoin is another name for innerjoin
+-natural join is similar to inner join
+
+outer 
+-left
+-right
+-full
+
+when we create aliases for column we require as keyword but when we create aliases for table we do not use keyword as
+
+
+-fetch emp_name,salary and department name of all the employees 
+
+old syntax-
+
+SELECT employee_id ,first_name,salary,department_name
+FROM hr.employees,hr.departments
+WHERE hr.employees.department_id=hr.departments.department 
+
+-new syntax
+SELECT c.first_name , c.last_name 
+FROM Customers as c JOIN Orders as o
+ON c.customer_id=o.customer_id; 
+
+
+--fetch name ,salary, and job tittle of all the employess 
+SELECT e.first_name , e.salary ,j.job_tittle 
+FROM hr.employees e JOIN hr.jobs j
+ON e.job_id = j.job_id;
+
+-fetch employee name ,department name and departments's location for all the employees
+Select e.first_name ,d.department_name, l.location 
+from hr.employees e JOIN hr.department d on same columns in both tables 
+JOIN hr.location l
+on e.employee_id= l.employee_id
+
+
+--fetch the manager of the employee
+self join
+--fetching employee maanger
+SELECT e.first_name,m.first_name AS manager
+FROM hr.employees e 
+JOIN hr.employees m ON e.manager_id=m.employee_id ;
+
+--fetching employees working under the manager(error)
+SELECT m.first_name,e.first_name AS manager
+FROM hr.employees e 
+JOIN hr.employees m ON m.manager_id=e.employee_id ;
+
+--cross join
+--it use to compare every record with every other record in the table
+select e1.first_name,e1.salary,e2.first_name,e2.salary
+from hr.employees e1
+cross join hr.employees e2
+where e1.job_id='IT_PROG' and e1.employee_id != e2.employee_id;
+
+
+
+
+
+
+normalization
+---------------
+1 NF-
+2 NF-table should not have partial dependency-the columns should be dependent on 
+3 NF-table should not have transitive dependency
+
+varchar and varchar2 share the info
+
+
+
+CREATE TABLE emp
+(
+    emp_no NUMBER(10) PRIMARY KEY, 
+    first_name VARCHAR(20) NOT NULL,
+    email VARCHAR(20) UNIQUE,
+    salary NUMBER(8,2) NOT NULL CHECK(salary>=10000)
+)
+
+INSERT INTO emp(emp_no,first_name,email,salary) VALUES (100,'pratik','pratik@',10000);
+INSERT INTO emp(emp_no,first_name,email,salary) VALUES (100,'rohit','rohit@',44000);
+--ORA-00001: unique constraint (SQL_XOZLGVEVGGRASOBDFCZGMRZRR.SYS_C00112069636) violated ORA-06512: at "SYS.DBMS_SQL", line 1721
+
+
+
+INSERT INTO emp(emp_no,first_name,email,salary) VALUES (102,'rratik','pratik@',10000);
+--ORA-00001: unique constraint (SQL_XOZLGVEVGGRASOBDFCZGMRZRR.SYS_C00112069637) violated ORA-06512: at "SYS.DBMS_SQL", line 1721
+
+INSERT INTO emp(emp_no,email,salary) VALUES (103,'ptik@',10000);
+--ORA-01400: cannot insert NULL into ("SQL_XOZLGVEVGGRASOBDFCZGMRZRR"."EMP"."FIRST_NAME") ORA-06512: at "SYS.DBMS_SQL", line 1721
+
+INSERT INTO emp(emp_no,first_name,email,salary) VALUES (104,'sakshi','sakshi@',9000);
+--ORA-02290: check constraint (SQL_XOZLGVEVGGRASOBDFCZGMRZRR.SYS_C00112069635) violated ORA-06512: at "SYS.DBMS_SQL", line 1721
+
+
+
+CREATE TABLE department 
+(
+    dept_id NUMBER(5) PRIMARY KEY,
+    dept_name VARCHAR2(20) NOT NULL,
+    location VARCHAR2(20)
+);
+
+INSERT INTO department(dept_id,dept_name,location) VALUES (1,'IT','PUNE');
+
+INSERT INTO department(dept_id,dept_name,location) VALUES (2,'IT','NASHIK');
+
+INSERT INTO department(dept_id,dept_name,location) VALUES (3,'IT','PUNE');
+
+
+ALTER TABLE emp
+ADD dept_id NUMBER(5) ;--if table is already created we cannot add not null contraint
+
+UPDATE emp
+SET dept_id=0
+WHERE dept_id is NULL;
+
+ALTER TABLE emp
+DROP COLUMN dept_id;
+
+AlTER TABLE emp
+MODIFY first_name NULL;
+
+
+ALTER TABLE emp
+ADD FOREIGN KEY(dept_id) REFERENCES department(dept_id);
+
+
+UPDATE department
+SET dept_name='SALES'
+WHERE dept_id=3;
+
+UPDATE emp
+SET salary=20000
+where first_name='pratik';
+
+ALTER TABLE EMP
+DROP CONSTRAINT emp_fk;
+
+
+DELETE FROM emp where emp_no=103;
+
+
+
+select * from department;
+select * from emp;
+
+DROP table emp;
+
+

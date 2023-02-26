@@ -1,0 +1,25 @@
+Study more object methods in java -
+clone method in java
+
+
+Similar to string pool , a pool of Integer object is created for the range of numbers between -128 to 127;
+pooling of numbers is only applicable to integer class
+Integer a=100;
+Intger b=100;
+a==b----->true
+a=1000;
+b=1000;
+a==b----->false
+
+
+Integer x=10;
+x=20;
+in the above code we assign x=10 and the obt is made but when we assign x=20 a new object is created again so the wrapper
+classes should be use careful
+
+---Functional programming 
+---Functional reactive programming 
+---SOLID principle in development 
+
+Today assignment 
+1)

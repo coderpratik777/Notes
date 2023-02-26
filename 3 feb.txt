@@ -1,0 +1,16 @@
+----------------------JDBC---------------------------------------------
+Drivers are the programs that are provide by the mysql to provide the connectivity between the jdbc and the database.
+Reflection api- the auto complete help we get in eclipse uses reflection api.
+
+
+why we use prepared statement insted of statement to fire query from jdbc
+
+so when we use statment every time when the query is fired it compiles it and then execute it ;
+but when we use prepared statement it precompiles the query so that it does not compile every time during firing of the 
+query.
+
+use executeupdate for dml statements.
+correlated subqueries
+
+
+

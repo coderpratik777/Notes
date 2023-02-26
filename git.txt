@@ -1,0 +1,27 @@
+git config --global user.name "coderpratik77"
+git config user.name
+
+git config --global user.email coderpratik321@gmail.com
+
+
+linux comands
+gits status
+git -rf .git
+
+
+Staging areA
+Work on stuff
+--TOUCH OUTLINE.TXT //creating the file
+--git status
+--creating one more txt file in directory
+
+--git add file1 file2
+--git rm --cached fileanme -to remove file from the staging area
+In git when we perform git commit all the files get committed but if we have edited many files so we have to group the 
+files and then commit
+
+--git commit
+
+
+git assignment --
+

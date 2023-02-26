@@ -1,0 +1,9 @@
+Sequence in databases
+DAO design pattern 
+-Coding 
+----Create an entity class and map it to some table in the database
+----we need to setup the database that we are  goinn to connect from our app
+----(META-INF/persistence.xml)
+
+String s = s="abcd";
+String s="abcde",s="efghij";

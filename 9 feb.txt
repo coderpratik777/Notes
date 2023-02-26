@@ -1,0 +1,50 @@
+Spring Framework
+--------------------------
+-Creating objects of our classes
+	-there are different ways of achieving this
+	-option 1
+	---------------------------------------------
+	public class HelloWorld{
+	}
+	then in xml file we define 
+	<bean="id" class="classname"/>
+	 if we have to make the object of the classes which we cannot add the code then we use this method
+	of object creation
+
+	-option 2
+	-----------------------------
+	using annotations
+	
+	@Component
+	public class Helloworld{
+	}
+	
+	still we need to do one entry in the xml file
+	<context:scan-componoenet...../>
+
+	
+-Managing Dependencies 
+
+create a maven project 
+open pom.xml
+download the liraries in ponm.xml
+go to the mavenrespositry
+and copy the xml confuguration
+
+save the xml files in the resources folder of the project
+
+
+Step to make  the object
+---------------------------------------
+1.make class
+2.make entry of that class in xml file
+
+Spring follows a singleton pattern 
+
+
+
+
+
+Dependency injection-------------------------
+How to make a maven project ---
+new project -> maven project-> click both the checkboxes->enter groupid(folder name)->enter artifact id(folder name main)

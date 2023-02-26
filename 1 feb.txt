@@ -1,0 +1,22 @@
+Exception handling ---------------------------------------------
+-Exceptions are eroors which may occur
+
+-Errors -errors and its subclasss are used to for reporting system level errors.
+	-for ex: OutOfMemoryError,StackoverfloeError;s
+
+
+Object 
+	Throwable
+		Exeception   RuntimeException
+			
+
+unchecked Exception and checked exception
+try out the programs of exception
+try out exception handle all types
+
+-Bytecode verifier
+-class loader
+-just in time compiler
+-garbage collector
+-security manager
+young genration and old generation

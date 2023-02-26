@@ -1,0 +1,107 @@
+The @Transient annotation in JPA (Java Persistence API) is used to indicate that a field or property of an 
+entity should not be persisted to the database.
+
+Here's an example of how to use @Transient:
+
+@Entity
+@Table(name = "employee")
+public class Employee {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(name = "name")
+    private String name;
+    
+    @Transient
+    private String fullName;
+    
+    // constructors, getters, and setters
+    
+    // calculate the fullName from the name and return it
+    public String getFullName() {
+        return name + " Doe";
+    }
+}
+
+
+
+In this example, the Employee entity has a fullName field that is not mapped to any database column.
+ Therefore, we use the @Transient annotation to tell JPA that this field should not be persisted.
+
+Instead, we have defined a method getFullName() that returns a calculated value based on the name field. 
+This method can be used to retrieve the full name of the employee by calling employee.getFullName(), but
+ it will not be persisted to the database.
+
+It's important to note that @Transient only applies to JPA persistence. It does not affect the behavior of 
+the Java class itself, and the field can still be used in other contexts, such as serialization or calculations.
+
+
+Example 2:
+
+Suppose we have an entity class Employee with three fields: id, name, and salary. We want to persist id, name 
+and salary to the database, but we also want to calculate a derived property tax based on the salary field,
+ without actually persisting it to the database.
+
+
+@Entity
+@Table(name = "employee")
+public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "salary")
+    private double salary;
+
+    @Transient
+    private double tax;
+
+    public Employee() {}
+
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+        this.tax = calculateTax();
+    }
+
+    // Getters and Setters for all fields
+
+    public double calculateTax() {
+        return this.salary * 0.1; // 10% tax rate
+    }
+
+}
+
+
+In the above example, we've marked the tax field with the @Transient annotation to indicate that it should not be
+ persisted to the database. Instead, we've defined a method calculateTax() that calculates the tax on the salary field, 
+and sets the value of tax field in the constructor.
+
+When we persist an Employee object to the database, only the id, name, and salary fields will be persisted. 
+The tax field will not be persisted, but it will still be available in memory for use by the application.
+
+
+EntityManager em = ... // Get EntityManager instance
+
+Employee employee = new Employee("John Doe", 50000.0);
+
+em.getTransaction().begin();
+em.persist(employee); // Only id, name, and salary will be persisted
+em.getTransaction().commit();
+
+double tax = employee.getTax(); // The tax field is still available in memory
+
+
+In the above example, when we persist the employee object to the database, only the id, name, and salary 
+fields will be persisted. The tax field will not be persisted, but it will still be available in memory for 
+use by the application.
+
+In summary, the @Transient annotation is used to indicate that a field or property of an entity should not
+ be persisted to the database. This can be useful when we want to calculate derived properties or store temporary 
+values that are not relevant for database persistence.

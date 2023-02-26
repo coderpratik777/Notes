@@ -1,0 +1,16 @@
+The classes which
+//Question arises if we are intializing an object in the above code then why not below code
+		//entity class objects are not created using spring
+
+connection pooling in java
+----------------------------------------------
+1) connection pooling is nothing but we are already creating the objects using spring 
+2) connection pool in dbcp2 using apache code
+we have to give the munber of connection pool in the database
+we have to also add the dependency in of dbcp2 in the pom.xml file configuration
+
+jdbc template in spring
+---------------------------------------------------------
+JdbcTemplate jt=new JdbcTemplate(datasource);
+		String sql="insert into tbl_carpart(part_name,car_model,price,quantity) values (?,?,?,?)";
+		jt.update(sql,carpart.getPartName(),carpart.getCarModel(),carpart.getPrice(),carpart.getQuantity());

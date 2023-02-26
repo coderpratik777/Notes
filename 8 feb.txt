@@ -1,0 +1,15 @@
+hibernate query-------
+placeholder in hql
+scalar and vector queries
+scalar queries are the queries that get specific column values for particular tuple
+vector queries give the whole tuple
+
+we use Object[] in hql to get the return from the getResultList
+if we have write scalar queries 
+
+we use cascade annotation in the parent class which is independent
+eg person
+
+select m.* from tbl_movie m join tbl_song s on m.id=s.album_id where s.name="Arijit Singh";
+
+select m,s.name from Movie m join Song s where m.

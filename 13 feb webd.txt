@@ -1,0 +1,28 @@
+Https ssl
+digital certificates
+Web server
+
+
+What is meta data in html ?
+try some meta data tags on your own.
+
+Html attributes------------------
+html attributes 
+href-
+alt-
+src-
+width-
+height-
+title- adding the tooltip to the any tag
+name- it can be used to refer the element in javascript
+
+html datalist--------
+html datalist gives us the dropdown 
+what is difference between select vs datalist?
+Select input element presents options for the users from which 
+they need to select one of them. On the otherhand, Datalist presents a list of suggested 
+values to the associated input form (text) field and users are free to select one of those 
+suggested values or type in their own value.
+
+
+html block and inline elements ----------------------

@@ -1,0 +1,10 @@
+Canvas tag-------------------
+Try the canvas for drawing the shapes , charts ,etc;
+chart js is library which provide us with ready made charts.
+
+SVG in html5------------------------
+
+Emet shortcut in html
+css selectors---------------
+class selectors
+id selectors

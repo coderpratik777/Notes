@@ -1,0 +1,26 @@
+Read more about framework
+exception propagation
+
+add or retrive is easy in arraylist 
+whereas manipulation in linked list is fast
+
+synchronized Collection and unsynchronized collection
+synchronization of arraylist
+copyonwritearraylist
+
+semaphore
+
+Treeset
+comparator method
+revise checked and unchecked exception
+
+comparator vs comparable
+comparable can be implemented in the person class.
+comparator can be implemented using new class.
+method reference in java 
+
+new concepts in java for code lines reducing
+
+
+so i get the topic for my java that is design patterns in java
+so everyday get some info to your knowledge add some important points to your memory.

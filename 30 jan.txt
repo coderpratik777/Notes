@@ -1,0 +1,33 @@
+package 
+ehen we are given a package alywaya give 
+
+logs in java
+log4j-most popular library in java for logging
+slf4j
+
+annotations
+-readabiliy 
+-validity 
+we write annptations to verify the signature for validation in override for example only.
+
+design patterns in java
+we can use 
+
+string buffer vs string builder
+
+todo:
+Read about object class.
+Read about Wrapper class.
+Read about Inner classes/Anonymous Inner Classes
+Read about lambda expressions 
+Read about Execption handling
+
+
+object class has equals method and that equals method by deafault check the reference is same or not
+string class overrides the equals method and define to content comparison 
+
+string buffer class didnot overrides the equals method it performs same refernce comparison
+
+
+
+reference comparison and content comparison

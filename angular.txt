@@ -1,0 +1,66 @@
+Free code camp tutorial notes
+
+-----------------------------------------------------------------
+
+Angular is a frame work developed by google.
+Angular is component based framework
+-----------------------------------------------------------
+framework vs libraries
+
+framework contains the libraries.
+libraries generally perform the specific operation.
+In software development, frameworks and libraries are both tools that can help developers write code more efficiently and effectively.
+ However, there are some important differences between the two.
+
+A library is a collection of code that developers can use to perform specific tasks or functions. 
+For example, a library for image processing might contain functions for resizing, cropping, and filtering images. 
+Developers can use these functions in their code to perform these tasks without having to write the code from scratch.
+
+On the other hand, a framework is a more comprehensive tool that provides a set of rules, conventions, and structures for building applications.
+ A framework defines the architecture of an application and often provides a set of libraries and tools for implementing that architecture. 
+For example, the Django web framework provides a set of conventions and structures for building web applications, as well as libraries for handling tasks 
+like database access and user authentication.
+
+Let's say you want to build a house. A library would be like a box of tools that you could use to perform specific tasks, 
+such as a hammer, saw, or drill. You could use these tools to build the house, but you would still have to come up with the design and architecture 
+of the house yourself.
+On the other hand, a framework would be like hiring an architect who provides you with a set of blueprints and plans for the house, as well as a team 
+of builders who will follow those plans to build the house. The architect provides you with a comprehensive set of rules, conventions, and structures for 
+building the house, and the builders use those rules and conventions to build the house.
+
+
+In short, libraries provide specific functionality that can be used in many different contexts, frameworks provide a more comprehensive 
+ more comprehensive tool that provides a set of rules, conventions, and structures for building applications.
+
+Another example of a framework is Angular, which is a front-end web application framework for building single-page applications. Angular provides a set of
+ conventions and tools for building complex, interactive user interfaces, including a component-based architecture for building UI components, a powerful 
+template engine for generating HTML, and a robust dependency injection system for managing application components.
+
+In summary, while libraries provide pre-written code that developers can use to perform specific tasks, frameworks provide a more comprehensive structure 
+and set of conventions for building applications, often including specific libraries and tools that are tailored to the framework.
+
+-----------------------------------------------------------------------------------------
+typescript
+
+Angular VS Angular js ?
+
+You are confuse about headline ....yes I know
+Ok without any more delay let dive in angular/angular js...
+Angular and Angular js are different! yes you read it correctly
+Angular js is written by two developers working in google in 2009.Initially it was named as getangular(Image attached is getangular website). 
+Angular Js ,name was inspired from the the sharp angles of the most famous brackets in the programming world (</>). 
+World is speeding up at that time in terms of technology and Angular js is losing its advantages .
+So in 2014, Google decided to rewrite it from scratch.It is rewritten in Typescript,typescript is a superset of javascript which was developed by microsoft it is 
+statically typed language.After that AngularJS used to be called simply Angular. The rewritten version was supposed to be called Angular 2. 
+But since it sparked a big confusion among developers, the old version got a new affix in the form of “JS”, 
+and all the new Angular versions were simply reduced to “Angular”.
+ Some differences between Angular and Angular js
+Angular js is written in javascript ,does not support mobile browsers,it is less manageable
+wheras Angular is written in typescript,which support mobile browsers,easier to create and manage large applications.
+
+There is interesting history behind foundation of Angular.If you are interested to know more 
+about it just go through the attached links.
+
+https://massivepixel.io/blog/angular-vs-angularjs/
+https://en.wikipedia.org/wiki/Angular_(web_framework)
+https://www.guru99.com/angularjs-1-vs-2-vs-4-vs-5-difference.html
