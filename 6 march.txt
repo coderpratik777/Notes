@@ -1,0 +1,73 @@
+How to run the java jdbc code using cmd--
+
+we know that java byte codes are residing in bin folder
+
+
+
+Setting up the maven for project building--
+
+After downloading Maven ,we need to set the path
+--Open environment variables
+-in the path ,put the location of apache bin folder
+
+we write javac programs in src/main/java
+we write persistence.xml and related files in src/main/resources
+compile code of java is store in target folder.
+dependencies are store in the pom.xml.
+
+just for demostration we are adding itext library in java which is a java pdf file handler
+
+GAV are identification of the maven project they are groupid ,artifact id,version.
+
+mvn compile  is used to compile the project.
+mvn test is used for testing
+mvn package -it creates jar file for the project 
+java -jar target/my-mave-app-0.0.1-SnapSHOT.jar
+--this command gives error beacuse it does not know the main class
+
+To run the main class we have to add some code in the pom.xml to make the jar file clickable 
+
+<build>
+  <plugins>
+    <plugin>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>fully.qualified.MainClass</mainClass>
+          </manifest>
+        </archive>
+        <descriptorRefs>
+          <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+      </configuration>
+      <executions>
+        <execution>
+          <id>make-assembly</id> <!-- this is used for inheritance merges -->
+          <phase>package</phase> <!-- bind to the packaging phase -->
+          <goals>
+            <goal>single</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
+
+here change the class name.
+
+run the command in the maven project 
+
+java -jar <file directory structure>
+
+
+-mvn clean : it is use to clean the target folder
+
+
+------------------------------------------------------------------------------------------------
+
+Junit (testing )
+
+add dependency in the pom.xml file 
+
+test case is made of given ,when ,then

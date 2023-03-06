@@ -1,0 +1,30 @@
+Git is like a timeline if you want to go to back in the past you can use
+
+git checkout <commit id of the git log commit>
+
+git remote add <aliasforyourremoterepo> link
+
+conflict handling in git
+<<<<<<<<head 
+this are the changes that are made by you
+=============
+this are the changes made by other developer
+>>>>>>>>>>>>>>>>.
+
+
+Branching in git
+===========================================
+branching is use to make the copy of the master branch so that we can fix the bug or if we want to add new feature.
+
+
+Eclipse setting
+===========================
+right click on the project -> team
+dont check the first box
+create a git repository for local repository
+
+magnifying glass icon->
+git repository->
+the first tie erro occurs because remote linking is not there  then you have to give name ot the
+local repo
+then it ask for  the url repo just copy the url and paste it to url dialog box

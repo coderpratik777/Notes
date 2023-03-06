@@ -1,0 +1,48 @@
+Why we use Jpa repository over Crud repository?
+
+In jpa repsository the return type is list which is type of collection and it provides more functionality.
+
+In the JPA repository interface declaration JpaRepository<Book, Long>, the second parameter Long is the
+ type of the ID field of the Book entity. It indicates that Book entity has an ID field of type Long, and 
+this ID field is used to uniquely identify each instance of the Book entity in the database.
+
+The Long parameter is necessary because Spring Data JPA needs to know the type of the ID field of the entity 
+in order to perform various operations like findById, deleteById, and so on. By providing the ID type as a type 
+parameter, Spring Data JPA can generate the necessary queries to retrieve or modify entities using their IDs.
+
+For example, if we want to retrieve a Book entity by its ID, we can call the findById method on the BookRepository
+ object and pass the ID as an argument: 
+
+@Autowired
+private BookRepository bookRepository;
+
+public Book getBookById(Long id) {
+    Optional<Book> bookOptional = bookRepository.findById(id);
+    return bookOptional.orElseThrow(() -> new RuntimeException("Book not found"));
+}
+
+
+In this example, the id parameter is of type Long and corresponds to the ID field of the Book entity.
+ The findById method uses this ID to retrieve the corresponding Book entity from the database.
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+Implementing the mvc archictecture using jsp,spring,jpa
+
+Add jstl java server tag library dependency
+jstl dependency is used to  add the if and for loop feature 
+
+
+
+------------------------------------------------------
+
+Steps to set up Spring boot project:-
+
+1) Go to site start.spring.io
+2) you can use the tool spring.iotools
+3) Click on the generate the new project 
+4) Zip file is downloaded 
+5) Open the eclipse and the dowloaded zip file as a new project by selecting only the internal folder.
+
+
