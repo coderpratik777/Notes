@@ -1,0 +1,11 @@
+Mongo db 
+
+-mongodb is document database designed for ease of development and scaling  
+-There are mainly two terms confusing the students learning Mongo db
+Mongo and Mongod "Mongo Daemon"
+-Mongo is the command -line shell that connects to a specific instance of mongod
+-Mongod is the basicall the host process for the database
+
+In Mongo Db we have Collections = Table 
+ 		    Documents = rows
+		    Fields = columns
